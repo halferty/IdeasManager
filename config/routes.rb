@@ -1,4 +1,12 @@
 IdeasManager::Application.routes.draw do
+  match '/rate' => 'rater#create', :as => 'rate'
+
+  resources :ratings
+
+  resources :ideas
+
+  devise_for :users
+
   root :to => 'static#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
